@@ -4,7 +4,7 @@
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
 
-class   NinjaTrap : public ClapTrap {
+class   NinjaTrap : virtual public ClapTrap {
     public:
         NinjaTrap();
         NinjaTrap(const std::string& name);
@@ -15,15 +15,9 @@ class   NinjaTrap : public ClapTrap {
         void    ninjaShoeBox(FragTrap& target);
         void    ninjaShoeBox(NinjaTrap& target);
         void    ninjaShoeBox(ScavTrap& target);
+        int     rangedAttack(const std::string& target);
+        int     meleeAttack(const std::string& target);
     private:
-        unsigned int _hitPoints;
-        unsigned int _maxHitPoints;
-        unsigned int _enrgPoints;
-        unsigned int _maxEnrgPoints;
-        std::string _name;
-        unsigned int _meleeAttDamage;
-        unsigned int _rangAttDamage;
-        unsigned int _armorDamageReduce;
 };
 
 #endif

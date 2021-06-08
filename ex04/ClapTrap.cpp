@@ -19,11 +19,11 @@ ClapTrap::ClapTrap() : _attCost(25) {
 
 ClapTrap::ClapTrap(const std::string& name) : _attCost(25) {
     this->_init(name);
-    std::cout << "<<Constructed a \033[32;1m" << this->_name << "\033[0m ClapTrap.>>" << std::endl;
+    std::cout << "<<Constructed ClapTrap>>" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
-    std::cout << "<<Destroyed a \033[32;1m" << this->_name << "\033[0m ClapTrap.>>" << std::endl;
+    std::cout << "<<Destroyed a ClapTrap>>" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& right) : _attCost(25) {

@@ -1,25 +1,21 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : _name("FRG-TRP") {
-    this->_attacks[0] = &FragTrap::meleeAttack;
-    this->_attacks[1] = &FragTrap::rangedAttack;
-    this->_attacks[2] = &FragTrap::freezeAttack;
-    this->_attacks[3] = &FragTrap::dumbAttack;
-    this->_attacks[4] = &FragTrap::cringeAttack;
-    std::cout << "<<Constructed an empty FragTrap.>>" << std::endl;
+FragTrap::FragTrap() : ClapTrap("FRG-TRP") {
+    this->_attacks[0] = &FragTrap::freezeAttack;
+    this->_attacks[1] = &FragTrap::dumbAttack;
+    this->_attacks[2] = &FragTrap::cringeAttack;
+    std::cout << "<<Constructed an empty FragTrap>>" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name) : _name(name) {
-    this->_attacks[0] = &FragTrap::meleeAttack;
-    this->_attacks[1] = &FragTrap::rangedAttack;
-    this->_attacks[2] = &FragTrap::freezeAttack;
-    this->_attacks[3] = &FragTrap::dumbAttack;
-    this->_attacks[4] = &FragTrap::cringeAttack;
-    std::cout << "<<Constructed a \033[32;1m" << this->_name << "\033[0m FragTrap.>>" << std::endl;
+FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+    this->_attacks[0] = &FragTrap::freezeAttack;
+    this->_attacks[1] = &FragTrap::dumbAttack;
+    this->_attacks[2] = &FragTrap::cringeAttack;
+    std::cout << "<<Constructed a FragTrap>>" << std::endl;
 }
 
 FragTrap::~FragTrap() {
-    std::cout << "<<Destroyed a \033[32;1m" << this->_name << "\033[0m FragTrap.>>" << std::endl;
+    std::cout << "<<Destroyed a FragTrap>>" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap& right) {
@@ -39,11 +35,9 @@ FragTrap&   FragTrap::operator=(FragTrap const &right) {
     this->_dumbAttDamage = right._dumbAttDamage;
     this->_cringAttDamage = right._cringAttDamage;
     this->_armorDamageReduce = right._armorDamageReduce;
-    this->_attacks[0] = &FragTrap::meleeAttack;
-    this->_attacks[1] = &FragTrap::rangedAttack;
-    this->_attacks[2] = &FragTrap::freezeAttack;
-    this->_attacks[3] = &FragTrap::dumbAttack;
-    this->_attacks[4] = &FragTrap::cringeAttack;
+    this->_attacks[0] = &FragTrap::freezeAttack;
+    this->_attacks[1] = &FragTrap::dumbAttack;
+    this->_attacks[2] = &FragTrap::cringeAttack;
     return *this;
 }
 

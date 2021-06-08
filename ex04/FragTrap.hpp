@@ -5,7 +5,7 @@
 # include <string>
 # include <ctime>
 
-class FragTrap : public ClapTrap {
+class FragTrap : virtual public ClapTrap {
     public:
         FragTrap();
         FragTrap(const std::string& name);
@@ -18,8 +18,7 @@ class FragTrap : public ClapTrap {
         int     cringeAttack(const std::string& target);
     private:
         typedef int    (FragTrap::*_attackFPtr)(const std::string&);
-        _attackFPtr  _attacks[5];
-        std::string _name;
+        _attackFPtr  _attacks[3];
         unsigned int _frzAttDamage;
         unsigned int _dumbAttDamage;
         unsigned int _cringAttDamage;

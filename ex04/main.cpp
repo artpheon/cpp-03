@@ -2,7 +2,7 @@
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
 #include "NinjaTrap.hpp"
-
+#include "SuperTrap.hpp"
 
 void fragTrapDemonstrate() {
 int damage;
@@ -57,17 +57,28 @@ void    scavDemonstrate() {
 }
 int main() {
 
-    NinjaTrap ninja;
-    NinjaTrap nin("nin");
-    ScavTrap scav;
-    FragTrap frag("frag");
-    ClapTrap regular("claptrap");
+    // NinjaTrap ninja;
+    // NinjaTrap nin("nin");
+    // ScavTrap scav;
+    // FragTrap frag("frag");
+    // ClapTrap regular("claptrap");
 
-    std::cout << std::endl;
-    nin.ninjaShoeBox(scav);
-    nin.ninjaShoeBox(ninja);
-    nin.ninjaShoeBox(frag);
-    nin.ninjaShoeBox(regular);
+    // std::cout << std::endl;
+    // nin.ninjaShoeBox(scav);
+    // nin.ninjaShoeBox(ninja);
+    // nin.ninjaShoeBox(frag);
+    // nin.ninjaShoeBox(regular);
+
+    std::cout << "____________Constructors______________" << std::endl;
+    SuperTrap trap = SuperTrap("newSupertrap");
+    NinjaTrap nin("ninja");
+    FragTrap    frag("newbie");
+    std::cout << "_____________Action___________________" << std::endl;
+    trap.ninjaShoeBox(nin);
+    trap.ninjaShoeBox(frag);
+    trap.meleeAttack(nin.getName());
+    trap.rangedAttack(frag.getName());
+    std::cout << "_____________Destructors_______________" << std::endl;
 
     return 0;
 }

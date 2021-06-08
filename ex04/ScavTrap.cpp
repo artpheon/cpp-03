@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : _name("SCV_TP") {
+ScavTrap::ScavTrap() : ClapTrap("SCV_TP") {
     this->_enrgPoints = 50;
     this->_maxEnrgPoints = 50;
     this->_meleeAttDamage = 20;
@@ -9,7 +9,7 @@ ScavTrap::ScavTrap() : _name("SCV_TP") {
     std::cout << "<<Unnamed ScavTrap constructed: Let me teach you the ways of magic!>>" << std::endl;
 }
 
-ScavTrap::ScavTrap(const std::string& name) : _name(name) {
+ScavTrap::ScavTrap(const std::string& name) : ClapTrap(name) {
     this->_enrgPoints = 50;
     this->_maxEnrgPoints = 50;
     this->_meleeAttDamage = 20;
