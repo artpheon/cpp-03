@@ -1,33 +1,37 @@
 #include "ClapTrap.hpp"
 
-void    ClapTrap::_init(const std::string &name) {
-    this->_hitPoints = 100;
-    this->_maxHitPoints = 100;
-    this->_enrgPoints = 100;
-    this->_maxEnrgPoints = 100;
-    this->_level = 1;
-    this->_name = name;
-    this->_meleeAttDamage = 30;
-    this->_rangAttDamage = 20;
-    this->_armorDamageReduce = 5;
-}
-
-ClapTrap::ClapTrap() : _attCost(25) {
-    this->_init("CLPTRP");
+ClapTrap::ClapTrap() :
+_attCost(25),
+_hitPoints(100),
+_maxHitPoints(100),
+_enrgPoints(100),
+_maxEnrgPoints(100),
+_level(1),
+_name("CLPTRP"),
+_meleeAttDamage(30),
+_rangAttDamage(20),
+_armorDamageReduce(5)
+{
     std::cout << "<<Empty ClapTrap activated!>>" << std::endl;
 }
 
-ClapTrap::ClapTrap(const std::string& name) : _attCost(25) {
-    this->_init(name);
-    std::cout << "<<Constructed ClapTrap>>" << std::endl;
+ClapTrap::ClapTrap(const std::string& name) :
+_attCost(25),
+_hitPoints(100),
+_maxHitPoints(100),
+_enrgPoints(100),
+_maxEnrgPoints(100),
+_level(1),
+_name(name),
+_meleeAttDamage(30),
+_rangAttDamage(20),
+_armorDamageReduce(5)
+{
+    std::cout << "<<Constructed a ClapTrap>>" << std::endl;
 }
 
 ClapTrap::~ClapTrap() {
     std::cout << "<<Destroyed a ClapTrap>>" << std::endl;
-}
-
-ClapTrap::ClapTrap(const ClapTrap& right) : _attCost(25) {
-    *this = right;
 }
 
 ClapTrap&   ClapTrap::operator=(ClapTrap const &right) {
@@ -41,6 +45,10 @@ ClapTrap&   ClapTrap::operator=(ClapTrap const &right) {
     this->_rangAttDamage = right._rangAttDamage;
     this->_armorDamageReduce = right._armorDamageReduce;
     return *this;
+}
+
+ClapTrap::ClapTrap(const ClapTrap& right) {
+    *this = right;
 }
 
 void    ClapTrap::setName(const std::string& name) {

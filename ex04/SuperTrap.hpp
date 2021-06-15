@@ -13,14 +13,8 @@ class SuperTrap : public NinjaTrap, public FragTrap  {
 		~SuperTrap();
 		SuperTrap(const SuperTrap&);
 		SuperTrap&	operator=(const SuperTrap&);
-	private:
-		using	FragTrap::_rangAttDamage;
-		using	FragTrap::_hitPoints;
-		using	FragTrap::_maxHitPoints;
-		using	FragTrap::_armorDamageReduce;
-		using	NinjaTrap::_enrgPoints;
-		using	NinjaTrap::_maxEnrgPoints;
-		using	NinjaTrap::_meleeAttDamage;
+		virtual void    setName(const std::string& name);
+        virtual const std::string&  getName() const;
 };
 
 #endif

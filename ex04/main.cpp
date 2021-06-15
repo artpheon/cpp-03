@@ -57,21 +57,13 @@ void    scavDemonstrate() {
 }
 int main() {
 
-    // NinjaTrap ninja;
-    // NinjaTrap nin("nin");
-    // ScavTrap scav;
-    // FragTrap frag("frag");
-    // ClapTrap regular("claptrap");
-
-    // std::cout << std::endl;
-    // nin.ninjaShoeBox(scav);
-    // nin.ninjaShoeBox(ninja);
-    // nin.ninjaShoeBox(frag);
-    // nin.ninjaShoeBox(regular);
-
+{
     std::cout << "____________Constructors______________" << std::endl;
+    std::cout << "_______SuperTrap:" << std::endl;
     SuperTrap trap = SuperTrap("newSupertrap");
-    NinjaTrap nin("ninja");
+    std::cout << "_______NinjaTrap:" << std::endl;
+    NinjaTrap nin = NinjaTrap("ninjaaa");
+    std::cout << "_______FragTrap:" << std::endl;
     FragTrap    frag("newbie");
     std::cout << "_____________Action___________________" << std::endl;
     trap.ninjaShoeBox(nin);
@@ -79,6 +71,9 @@ int main() {
     trap.meleeAttack(nin.getName());
     trap.rangedAttack(frag.getName());
     std::cout << "_____________Destructors_______________" << std::endl;
-
+}
+    std::cout << "\n" << std::endl;
+    ClapTrap *ptr = new SuperTrap("superTRAP");
+    delete ptr;
     return 0;
 }

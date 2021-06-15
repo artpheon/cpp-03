@@ -10,14 +10,15 @@ class   NinjaTrap : virtual public ClapTrap {
         NinjaTrap(const std::string& name);
         NinjaTrap(const NinjaTrap& right);
         NinjaTrap&  operator=(const NinjaTrap& right);
-        ~NinjaTrap();
+        virtual ~NinjaTrap();
+        virtual void    setName(const std::string& name);
+        virtual const std::string&  getName() const;
         void    ninjaShoeBox(ClapTrap& target);
         void    ninjaShoeBox(FragTrap& target);
         void    ninjaShoeBox(NinjaTrap& target);
         void    ninjaShoeBox(ScavTrap& target);
-        int     rangedAttack(const std::string& target);
-        int     meleeAttack(const std::string& target);
-    private:
+        virtual int     rangedAttack(const std::string& target);
+        virtual int     meleeAttack(const std::string& target);
 };
 
 #endif

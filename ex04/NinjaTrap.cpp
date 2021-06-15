@@ -1,7 +1,6 @@
 #include "NinjaTrap.hpp"
 
-
-NinjaTrap::NinjaTrap() : ClapTrap("NINJA") {
+NinjaTrap::NinjaTrap() : ClapTrap() {
     this->_hitPoints = 60;
     this->_maxHitPoints = 60;
     this->_enrgPoints = 120;
@@ -9,10 +8,11 @@ NinjaTrap::NinjaTrap() : ClapTrap("NINJA") {
     this->_meleeAttDamage = 60;
     this->_rangAttDamage = 5;
     this->_armorDamageReduce = 0;
+    this->_name = "NINJA";
     std::cout << "<<NinjaTrap was born!>>\n" << "悪に慈悲が被られることはない!" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(const std::string& name) : ClapTrap(name) {
+NinjaTrap::NinjaTrap(const std::string& name) : ClapTrap() {
     this->_hitPoints = 60;
     this->_maxHitPoints = 60;
     this->_enrgPoints = 120;
@@ -20,6 +20,7 @@ NinjaTrap::NinjaTrap(const std::string& name) : ClapTrap(name) {
     this->_meleeAttDamage = 60;
     this->_rangAttDamage = 5;
     this->_armorDamageReduce = 0;
+    this->_name = name;
     std::cout << "<<NinjaTrap was born!>>\n" 
     << "Only a ninja can stop a ninja." << std::endl;
 }
@@ -43,6 +44,14 @@ NinjaTrap&  NinjaTrap::operator=(const NinjaTrap& right) {
 
 NinjaTrap::~NinjaTrap() {
     std::cout << "<<NinjaTrap dies>>\nAll those moments will be lost in time, like tears in rain. Time to die." << std::endl;
+}
+
+void    NinjaTrap::setName(const std::string& name) {
+    this->_name = name;
+}
+
+const std::string&  NinjaTrap::getName() const {
+    return this->_name;
 }
 
 void    NinjaTrap::ninjaShoeBox(ClapTrap& target) {

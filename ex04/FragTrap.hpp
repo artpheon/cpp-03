@@ -10,8 +10,10 @@ class FragTrap : virtual public ClapTrap {
         FragTrap();
         FragTrap(const std::string& name);
         FragTrap(const FragTrap& right);
-        ~FragTrap();
+        virtual ~FragTrap();
         FragTrap&   operator=(FragTrap const &right);
+        virtual void    setName(const std::string& name);
+        virtual const std::string&  getName() const;
         int     vaulthunter_dot_exe(const std::string& target);
         int     freezeAttack(const std::string& target);
         int     dumbAttack(const std::string& target);

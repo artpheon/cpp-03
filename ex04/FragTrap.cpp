@@ -1,16 +1,18 @@
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap("FRG-TRP") {
+FragTrap::FragTrap() : ClapTrap() {
     this->_attacks[0] = &FragTrap::freezeAttack;
     this->_attacks[1] = &FragTrap::dumbAttack;
     this->_attacks[2] = &FragTrap::cringeAttack;
+    this->_name = "FRGTRP";
     std::cout << "<<Constructed an empty FragTrap>>" << std::endl;
 }
 
-FragTrap::FragTrap(const std::string& name) : ClapTrap(name) {
+FragTrap::FragTrap(const std::string& name) : ClapTrap() {
     this->_attacks[0] = &FragTrap::freezeAttack;
     this->_attacks[1] = &FragTrap::dumbAttack;
     this->_attacks[2] = &FragTrap::cringeAttack;
+    this->_name = name;
     std::cout << "<<Constructed a FragTrap>>" << std::endl;
 }
 
@@ -39,6 +41,14 @@ FragTrap&   FragTrap::operator=(FragTrap const &right) {
     this->_attacks[1] = &FragTrap::dumbAttack;
     this->_attacks[2] = &FragTrap::cringeAttack;
     return *this;
+}
+
+void    FragTrap::setName(const std::string& name) {
+    this->_name = name;
+}
+
+const std::string&  FragTrap::getName() const {
+    return this->_name;
 }
 
 int    FragTrap::freezeAttack(const std::string& target) {
@@ -74,5 +84,5 @@ int    FragTrap::cringeAttack(const std::string& target) {
 
 int    FragTrap::vaulthunter_dot_exe(const std::string& target) {
 
-    return (this->*_attacks[rand() % 5])(target);
+    return (this->*_attacks[rand() % 3])(target);
 }
