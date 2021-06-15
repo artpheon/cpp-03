@@ -1,1 +1,0 @@
-clang++ -Wall -Wextra -Wno-unused -Werror FragTrap.cpp main.cpp -o ex00 && ./ex00

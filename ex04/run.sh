@@ -1,1 +1,0 @@
-clang++ -Wall -Wextra -Wno-unused *.cpp -o ex04 && ./ex04
